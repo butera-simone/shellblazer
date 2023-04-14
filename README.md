@@ -29,3 +29,11 @@ sh = sh.configure({ cwd: './foo' })
 sh(['touch', 'a.txt'])
 //this will create the file a.txt inside the foo directory
 ```
+
+Shellblazer can execute commands in sequence with a single function call, by taking any number of arrays as arguments
+
+```javascript
+let sh = require ('./index')
+
+sh(['mkdir', 'alpha'], ['mkdir', 'beta'])
+```
