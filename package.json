@@ -1,0 +1,17 @@
+{
+  "name": "shellblazer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simone Butera",
+  "license": "ISC",
+  "dependencies": {
+    "standard": "^17.0.0"
+  },
+  "devDependencies": {
+    "standard": "*"
+  }
+}
