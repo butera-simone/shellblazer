@@ -3,9 +3,9 @@ const { spawn } = require('child_process')
 module.exports = createShellBlazer()
 
 function createShellBlazer (opts = {}) {
-  function shellBlazer (...args) {
-    return new Promise((resolve, reject) => {
-      for (const line of args) {
+  async function shellBlazer (...args) {
+    for (const line of args) {
+      await new Promise((resolve, reject) => {
         const proc = spawn(line[0], line.slice(1), { stdio: 'inherit', cwd: shellBlazer.cwd, env: shellBlazer.env })
 
         proc.on('error', reject)
@@ -13,9 +13,8 @@ function createShellBlazer (opts = {}) {
           if (code) reject(new Error('"' + line.join(' ') + '" failed with code: ' + code))
           else resolve()
         })
-      }
-      resolve()
-    })
+      })
+    }
   }
   shellBlazer.cwd = opts.cwd || '.'
   shellBlazer.env = opts.env || process.env
