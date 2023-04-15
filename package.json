@@ -8,11 +8,8 @@
   },
   "author": "Simone Butera",
   "license": "ISC",
-  "dependencies": {
-    "standard": "^17.0.0"
-  },
   "devDependencies": {
-    "standard": "*"
+    "standard": "^17.0.0"
   },
   "repository": {
     "type": "git",
