@@ -19,7 +19,7 @@ let sh = require('shellblazer')
 sh(['mkdir', 'foo'])
 ```
 
-The commands are executed with spawnSync() with {shell: false}, so you cannot pipe output from one command to another.
+The commands are executed with spawn() with {shell: false}, so you cannot pipe output from one command to another.
 
 
 You can change directory by passing a cwd option to the .configure() method. The method will return a new shellblazer function, that will have the required working directory set:
