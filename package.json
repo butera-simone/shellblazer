@@ -1,6 +1,6 @@
 {
   "name": "shellblazer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple module for executing shell commands with less boilerplate.",
   "main": "index.js",
   "scripts": {
