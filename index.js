@@ -6,7 +6,7 @@ function createShellBlazer (opts = {}) {
   function shellBlazer (...args) {
     return new Promise((resolve, reject) => {
       for (const line of args) {
-        const proc = spawn(line[0], line.slice(1), { stdio: 'inherit', cwd: shellBlazer.cwd })
+        const proc = spawn(line[0], line.slice(1), { stdio: 'inherit', cwd: shellBlazer.cwd, env: shellBlazer.env })
 
         proc.on('error', reject)
         proc.on('exit', code => {
@@ -18,6 +18,7 @@ function createShellBlazer (opts = {}) {
     })
   }
   shellBlazer.cwd = opts.cwd || '.'
+  shellBlazer.env = opts.env || process.env
   shellBlazer.configure = function configure (newOpts = {}) {
     return createShellBlazer({ ...opts, ...newOpts })
   }
